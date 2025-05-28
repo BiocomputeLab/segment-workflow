@@ -42,7 +42,7 @@ This protocol creates a mastermix for the tailing PCR in a reservoir to allow qu
 
 **Pipettes Needed:** P300 Single Gen2, P1000 Single Gen2
 
-<img src="./protocols/deck_layouts/Deck_Layout_1.png" width="280px">
+<img src="./protocols/deck_layouts/Deck_Layout_1.png" width="300px">
 
 ### Protocol 2: Lysis of Cells & Tailing PCR
 The temperature block is used to lyse sample cultures at 95°C before they are spun down (external centrifuge 4,000rpm for 2 minutes) and supernatant transferred to a storage plate. The mastermix and each sample is added to the on deck thermocycler and used to complete tailing PCR reaction.
@@ -55,7 +55,7 @@ The temperature block is used to lyse sample cultures at 95°C before they are s
 
 **Modules Needed:** Thermocycler, Temperature Module Gen2
 
-![Deck Layout](./protocols/deck_layouts/Deck_Layout_2.png)
+<img src="./protocols/deck_layouts/Deck_Layout_2.png" width="300px">
 
 ## DNA Purification
 ### Protocol 3: DNA Purification of Tailing PCR Products
@@ -69,7 +69,7 @@ The magnetic module is used to purify the tailing PCR reactions with 0.4x KAPA m
 
 **Modules Needed:** Magnetic Module Gen2
 
-![Deck Layout](./protocols/deck_layouts/Deck_Layout_3_&_10.png)
+<img src="./protocols/deck_layouts/Deck_Layout_3_&_10.png" width="300px">
 
 ## DNA Quantification
 DNA is prepared for quantification using the [Quantifluor ONE dsDNA system](https://www.promega.co.uk/products/rna-analysis/dna-and-rna-quantitation/quantifluor-one-dsdna-system/?catNum=E4870) kit across two black, clear bottomed 96 well plates. These are then read using a fluorescent plate reader from the bottom (Excitation: 485 nm, Emission: 535 nm) and analysed in the available [Excel workbook](https://www.promega.co.uk/resources/tools/quantifluor-dye-systems-data-analysis-workbook/).
@@ -83,7 +83,7 @@ Prepare the standards by creating a dilution series of the Lambda dsDNA standard
 
 **Pipettes Needed:** P20 Single Gen2
 
-![Deck Layout](./protocols/deck_layouts/Deck_Layout_4.png)
+<img src="./protocols/deck_layouts/Deck_Layout_4.png" width="300px">
 
 ### Protocol 5: Add Standards and Samples to Quantifluor Dye
 Adds 200 uL of Quantifluor dye across one full plate and 4 columns in a second plate. In the first plate Columns 1 and 12 will contain the standards in duplicate and samples from the elution plate will be from and in Columns 2 to 11. The second plate will also contain the standards in duplicate in Columns 1 and 4. Samples from Column 1 in the sample plate will be read in Column 2 of the reader plate and Column 12 read in Column 3.
@@ -94,7 +94,7 @@ Adds 200 uL of Quantifluor dye across one full plate and 4 columns in a second p
 
 **Pipettes Needed:** P20 Multi Gen2, P300 Multi Gen2
 
-![Deck Layout](./protocols/deck_layouts/Deck_Layout_5.png)
+<img src="./protocols/deck_layouts/Deck_Layout_5.png" width="300px">
 
 ## Barcoding PCR
 Samples are diluted to 1.18 ng/uL in nuclease free water and added to a PCR reaction using NEB's [LongAmp Taq 2X Mastermix](https://international.neb.com/products/m0287-longamp-taq-2x-master-mix#Product%20Information) and [Oxford Nanopore's PCR Barcoding Expansion Kit](https://store.nanoporetech.com/uk/pcr-barcoding-expansion-1-96.html).
@@ -122,7 +122,7 @@ scp -i ot2_ssh_key -r root@ROBOT_IP:/data/user_storage/output_files/DATE_Barcode
 
 **Pipettes Needed:** P20 Single Gen2
 
-![Deck Layout](./protocols/deck_layouts/Deck_Layout_6.png)
+<img src="./protocols/deck_layouts/Deck_Layout_6.png" width="300px">
 
 ### Protocol 7: Dilute All Samples 1 in 7
 8 uL of each elution is added to 48 uL of nuclease free water and thoroughly mixed.
@@ -133,7 +133,7 @@ scp -i ot2_ssh_key -r root@ROBOT_IP:/data/user_storage/output_files/DATE_Barcode
 
 **Pipettes Needed:** P20 Multi Gen2, P300 Multi Gen2
 
-![Deck Layout](./protocols/deck_layouts/Deck_Layout_7.png)
+<img src="./protocols/deck_layouts/Deck_Layout_7.png" width="300px">
 
 ### Protocol 8:
 Dilution of all samples to 1.18 ng/uL.
@@ -144,7 +144,7 @@ Dilution of all samples to 1.18 ng/uL.
 
 **Pipettes Needed:** P20 Single Gen2, P300 Single Gen2
 
-![Deck Layout](./protocols/deck_layouts/Deck_Layout_8.png)
+<img src="./protocols/deck_layouts/Deck_Layout_8.png" width="300px">
 
 ### Protocol 9:
 Barcoding PCR set up and execution in 45 uL reaction. Set `CASCADE_EXP` to `True` in the script if sequencing integrase plasmids as well as memory registers.
@@ -157,7 +157,7 @@ Barcoding PCR set up and execution in 45 uL reaction. Set `CASCADE_EXP` to `True
 
 **Modules Needed:** Thermocycler
 
-![Deck Layout](./protocols/deck_layouts/Deck_Layout_9.png)
+<img src="./protocols/deck_layouts/Deck_Layout_9.png" width="300px">
 
 ## DNA Purification & Quantification
 Purfify the DNA using Protocol 10 then repeat Protocol 5 to quantify the eluted DNA.
@@ -173,7 +173,7 @@ The magnetic module is used to purify the barcoding PCR reactions with 0.4x KAPA
 
 **Modules Needed:** Magnetic Module Gen2
 
-![Deck Layout](./protocols/deck_layouts/Deck_Layout_3_&_10.png)
+<img src="./protocols/deck_layouts/Deck_Layout_3_&_10.png" width="300px">
 
 ## Library Preparation for Nanopore Sequencing
 This protocol prepares two libraries for Nanopore sequencing each containing 48 samples. Each library is required to be 47 uL and contain 1 mg of DNA for sequencing protocol.
@@ -199,4 +199,4 @@ scp -i ot2_ssh_key -r root@ROBOT_IP:/data/user_storage/output_files/DATE_Flow_Ce
 
 **Pipettes Needed:** P20 Single Gen2, P300 Single Gen2
 
-![Deck Layout](./protocols/deck_layouts/Deck_Layout_11.png)
+<img src="./protocols/deck_layouts/Deck_Layout_11.png" width="300px">
