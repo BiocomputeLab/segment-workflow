@@ -36,7 +36,7 @@ Prior to running any protocols ensure you have [set up your custom labware defin
 ### Protocol 1: Preparing the Tailing PCR Mastermix
 This protocol creates a mastermix for the tailing PCR in a reservoir to allow quick transfer to the 96-well plate in the next protocol.
 
-#### [Protocol 1](./protocols/1_Prep_Tailing_PCR_Mastermix.py) - Creates one mastermix for 96 samples amplifying memory registers.
+#### [Protocol 1](./protocols/1_Prep_Tailing_PCR_Mastermix.py)
 
 **Protocol Length:** 7 - 10 minutes
 
@@ -47,7 +47,7 @@ This protocol creates a mastermix for the tailing PCR in a reservoir to allow qu
 ### Protocol 2: Lysis of Cells & Tailing PCR
 The temperature block is used to lyse sample cultures at 95°C before they are spun down (external centrifuge 4,000rpm for 2 minutes) and supernatant transferred to a storage plate. The mastermix and each sample is added to the on deck thermocycler and used to complete tailing PCR reaction.
 
-#### [Protocol 2](./protocols/2_PCR_Tailing_Reaction.py) - Amplifying memory registers in 96 samples.
+#### [Protocol 2](./protocols/2_PCR_Tailing_Reaction.py)
 
 **Protocol Length:** 3 hours 32 minutes (Protocol 2)
 
