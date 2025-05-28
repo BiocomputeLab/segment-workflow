@@ -42,7 +42,7 @@ This protocol creates a mastermix for the tailing PCR in a reservoir to allow qu
 
 **Pipettes Needed:** P300 Single Gen2, P1000 Single Gen2
 
-![Deck Layout](./protocols/deck_layouts/Deck_Layout_1.png)
+![Deck Layout](./protocols/deck_layouts/Deck_Layout_1.png){width="100px"}
 
 ### Protocol 2: Lysis of Cells & Tailing PCR
 The temperature block is used to lyse sample cultures at 95°C before they are spun down (external centrifuge 4,000rpm for 2 minutes) and supernatant transferred to a storage plate. The mastermix and each sample is added to the on deck thermocycler and used to complete tailing PCR reaction.
