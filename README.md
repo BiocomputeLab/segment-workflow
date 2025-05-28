@@ -8,9 +8,9 @@ App & Robot Software tested to 5.0.2
 API Version: 2.11
 
 ### OT-2(s)
-This pipeline has been run with one OT-2 over two extended days where the pipettes and deck was reconfigured after each protocol. When running for the first time in this way please allow at least 3 days including the Nanopore sequencing set up.
+This pipeline has been run with one OT-2 over two extended days where the pipettes and deck was reconfigured after each protocol. When running for the first time in this way please allow at least 3 days including the nanopore sequencing set up.
 
-The best set up we achieved was using two OT-2s - one with both mult-channels installed for use with all three modules interchangeably (Thermocycler, Magnetic Module, Temperature Module) and one with the single channels for dilutions and reagent preparation steps. This meant only one pipette change and that some protocols could be run in parallel / set up in advance to speed up the pipeline. With this set up, the pipeline can be run comfortably in two working days including Nanopore sequencing preparation.
+The best set up we achieved was using two OT-2s - one with both mult-channels installed for use with all three modules interchangeably (Thermocycler, Magnetic Module, Temperature Module) and one with the single channels for dilutions and reagent preparation steps. This meant only one pipette change and that some protocols could be run in parallel / set up in advance to speed up the pipeline. With this set up, the pipeline can be run comfortably in two working days including nanopore sequencing preparation.
 
 **Before each protocol was started a calibration step was taken to check calibration of all labware used and apply any offsets if needed.**
 
