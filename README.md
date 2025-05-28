@@ -4,6 +4,7 @@
 
 ### Software & API:
 App & Robot Software tested to 5.0.2
+
 API Version: 2.11
 
 ### OT-2(s)
@@ -31,14 +32,17 @@ mkdir output_files
 Prior to running any protocols ensure you have [set up your custom labware definitions folder](labware/README.md) in the Opentrons App.
 
 ## Tailing PCR Reaction
+
 ### Protocol 1: Preparing the Tailing PCR Mastermix
 This protocol creates a mastermix for the tailing PCR in a reservoir to allow quick transfer to the 96-well plate in the next protocol.
 
 #### [Protocol 1](./protocols/1_Prep_Tailing_PCR_Mastermix.py) - Creates one mastermix for 96 samples amplifying memory registers.
 
 **Protocol Length:** 7 - 10 minutes
+
 **Pipettes Needed:** P300 Single Gen2, P1000 Single Gen2
-![Deck Layout](./protocols/deck_layouts/Deck_Layout_1_%26_1a.png)
+
+![Deck Layout](./protocols/deck_layouts/Deck_Layout_1.png)
 
 ### Protocol 2: Lysis of Cells & Tailing PCR
 The temperature block is used to lyse sample cultures at 95°C before they are spun down (external centrifuge 4,000rpm for 2 minutes) and supernatant transferred to a storage plate. The mastermix and each sample is added to the on deck thermocycler and used to complete tailing PCR reaction.
@@ -46,9 +50,12 @@ The temperature block is used to lyse sample cultures at 95°C before they are s
 #### [Protocol 2](./protocols/2_PCR_Tailing_Reaction.py) - Amplifying memory registers in 96 samples.
 
 **Protocol Length:** 3 hours 32 minutes (Protocol 2)
+
 **Pipettes Needed:** P20 Multi Gen2, P300 Multi Gen2
+
 **Modules Needed:** Thermocycler, Temperature Module Gen2
-![Deck Layout](./protocols/deck_layouts/Deck_Layout_2_&_2a.png)
+
+![Deck Layout](./protocols/deck_layouts/Deck_Layout_2.png)
 
 ## DNA Purification
 ### Protocol 3: DNA Purification of Tailing PCR Products
@@ -57,8 +64,11 @@ The magnetic module is used to purify the tailing PCR reactions with 0.4x KAPA m
 #### [Protocol 3](./protocols/3_Pur_DNA_Mag_20ul.py)
 
 **Protocol Length:** 1 hour 51 minutes
+
 **Pipettes Needed:** P20 Multi Gen2, P300 Multi Gen 2
+
 **Modules Needed:** Magnetic Module Gen2
+
 ![Deck Layout](./protocols/deck_layouts/Deck_Layout_3_&_10.png)
 
 ## DNA Quantification
@@ -70,7 +80,9 @@ Prepare the standards by creating a dilution series of the Lambda dsDNA standard
 #### [Protocol 4](./protocols/4_Prep_Quantifluor_Stds.py)
 
 **Protocol Length:** 7 minutes
+
 **Pipettes Needed:** P20 Single Gen2
+
 ![Deck Layout](./protocols/deck_layouts/Deck_Layout_4.png)
 
 ### Protocol 5: Add Standards and Samples to Quantifluor Dye
@@ -79,7 +91,9 @@ Adds 200 uL of Quantifluor dye across one full plate and 4 columns in a second p
 #### [Protocol 5](./protocols/5_Prep_Quantifluor_Samples.py)
 
 **Protocol Length:** 18 minutes
+
 **Pipettes Needed:** P20 Multi Gen2, P300 Multi Gen2
+
 ![Deck Layout](./protocols/deck_layouts/Deck_Layout_5.png)
 
 ## Barcoding PCR
@@ -87,10 +101,13 @@ Samples are diluted to 1.18 ng/uL in nuclease free water and added to a PCR reac
 
 ### Protocol 6: Calculate Dilution Steps for Each Sample based on DNA Quantification
 A simple CSV (example [here](./protocols/example_files/2022-03-01_Elution_Concentrations.csv)) with the well IDs and DNA concentrations is uploaded the OT-2 using the terminal via USB connection:
+
 ***Note: All dates are required in YYYY-MM-DD format when `DATE` is used***
+
 ```sh
 scp -i ot2_ssh_key FILE_PATH_ON_YOUR_COMPUTER/DATE_Elution_Concentrations.csv root@ROBOT_IP:/data/user_storage/input_files/
 ```
+
 The protocol calculates the concentrations and volumes needed of each sample to dilute them to 1.18 ng/uL after a 1 in 7 dilution. These calculations are written to CSV files saved on the OT-2 for when protocol 8 is run. Any samples with concentrations below 20 ng/uL are too low to be diluted 1 in 7 and so during this protocol are removed from the elution plate into another plate to be diluted individually.
 
 A record of all dilutions and calculations can be obtained from OT-2 using:
@@ -102,7 +119,9 @@ scp -i ot2_ssh_key -r root@ROBOT_IP:/data/user_storage/output_files/DATE_Barcode
 #### [Protocol 6](./protocols/6_Prep_Barcode_Dilution_Pt_1.py)
 
 **Protocol Length:** 5 minutes
+
 **Pipettes Needed:** P20 Single Gen2
+
 ![Deck Layout](./protocols/deck_layouts/Deck_Layout_6.png)
 
 ### Protocol 7: Dilute All Samples 1 in 7
@@ -111,7 +130,9 @@ scp -i ot2_ssh_key -r root@ROBOT_IP:/data/user_storage/output_files/DATE_Barcode
 #### [Protocol 7](./protocols/7_Prep_Barcode_Dilution_Pt_2.py)
 
 **Protocol Length:** 15 minutes
+
 **Pipettes Needed:** P20 Multi Gen2, P300 Multi Gen2
+
 ![Deck Layout](./protocols/deck_layouts/Deck_Layout_7.png)
 
 ### Protocol 8:
@@ -120,7 +141,9 @@ Dilution of all samples to 1.18 ng/uL.
 #### [Protocol 8](./protocols/8_Prep_Barcode_Dilution_Pt_3.py)
 
 **Protocol Length:** 1 hour 32 minutes
+
 **Pipettes Needed:** P20 Single Gen2, P300 Single Gen2
+
 ![Deck Layout](./protocols/deck_layouts/Deck_Layout_8.png)
 
 ### Protocol 9:
@@ -129,8 +152,11 @@ Barcoding PCR set up and execution in 45 uL reaction. Set `CASCADE_EXP` to `True
 #### [Protocol 9](./protocols/9_PCR_Barcoding_Reaction.py)
 
 **Protocol Length:** 1 hour 45 minutes (2 hours 32 minutes if amplifying integrase plasmids)
+
 **Pipettes Needed:** P20 Multi Gen2, P300 Multi Gen2
+
 **Modules Needed:** Thermocycler
+
 ![Deck Layout](./protocols/deck_layouts/Deck_Layout_9.png)
 
 ## DNA Purification & Quantification
@@ -142,8 +168,11 @@ The magnetic module is used to purify the barcoding PCR reactions with 0.4x KAPA
 #### [Protocol 10](./protocols/10_Pur_DNA_Mag_40ul.py)
 
 **Protocol Length:** 2 hours 5 minutes
+
 **Pipettes Needed:** P20 Multi Gen2, P300 Multi Gen2
+
 **Modules Needed:** Magnetic Module Gen2
+
 ![Deck Layout](./protocols/deck_layouts/Deck_Layout_3_&_10.png)
 
 ## Library Preparation for Nanopore Sequencing
@@ -157,6 +186,7 @@ A simple CSV with the well IDs, sample IDs and DNA concentrations is uploaded th
 ```sh
 scp -i ot2_ssh_key FILE_PATH_ON_YOUR_COMPUTER/DATE_Library_Elution_Concentrations.csv root@ROBOT_IP:/data/user_storage/input_files/
 ```
+
 Records of all dilutions and concentrations of DNA in each flow cell can be obtained from OT-2 using:
 
 ```sh
@@ -166,5 +196,7 @@ scp -i ot2_ssh_key -r root@ROBOT_IP:/data/user_storage/output_files/DATE_Flow_Ce
 #### [Protocol 11](./protocols/11_Prep_DNA_Libraries.py)
 
 **Protocol Length:** 1 hour 45 minutes
+
 **Pipettes Needed:** P20 Single Gen2, P300 Single Gen2
+
 ![Deck Layout](./protocols/deck_layouts/Deck_Layout_11.png)
