@@ -1,4 +1,4 @@
-# Automated Memory Readout Pipeline using the OT-2
+# Segment automated experimental workflow
 
 ## Set Up
 
